@@ -1,9 +1,8 @@
 #include <Arduino.h>
 #include <FastLED.h>
 #include <GyverHub.h>
-#include "car_parameter.h"
 
-extern GHcolor colorArray[NUM_LEDS];
+#include "car_parameter.h"
 
 CRGB leds[NUM_LEDS];
 
@@ -14,21 +13,25 @@ void initLed() {
 }
 
 void startAll_led_animation() {
-  for (int i = 0; i < NUM_LEDS; i++) { colorArray[i].setRGB(255, 0, 0); }
-  for (int i = 0; i < NUM_LEDS; i++) { leds[i] = colorArray[i].getHEX(); }
+  for (int i = 0; i < NUM_LEDS; i++) {
+    if (param.colorArray[i].getHEX() == 000000) {
+      param.colorArray[i].setRGB(255, 0, 0);
+    }
+  }
+  for (int i = 0; i < NUM_LEDS; i++) { leds[i] = param.colorArray[i].getHEX(); }
   FastLED.show();
 
   //Плавное увеличение яркости
-  for (int i = 0; i < 255; i += 5) {
+  for (int i = 0; i < param.max_brigh; i += 5) {
     FastLED.setBrightness(i);
     FastLED.show();
     delay(200);
   }
 }
 
-void change_AllColor() {
+void update_AllColor() {
   for (int i = 0; i < NUM_LEDS; i++) {
-    leds[i] = colorArray[i].getHEX();
+    leds[i] = param.colorArray[i].getHEX();
   }
   FastLED.show();
 }
