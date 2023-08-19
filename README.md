@@ -1,5 +1,9 @@
+Car Speedometer LED Control
+Description: Enhance your car's interior aesthetics with custom LED illumination for the speedometer. This Arduino-based project, paired with addressable LEDs, brings you a unique lighting experience that's fully under your control. The "GyverHub" library powers an intuitive setup and control process, while the "GyverHub" Android app ensures seamless interaction.
+
 <details>
 <summary><code>English Description</code></summary>
+
 # Car Speedometer LED Control
 
 > Control and customize your car's speedometer illumination using Arduino and addressable LEDs.
@@ -51,11 +55,14 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, f
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
 </details>
+
+
+Управление LED-подсветкой автомобильного спидометра
+Описание: Поднимите эстетику интерьера вашего автомобиля с помощью настраиваемой LED-подсветки для спидометра. Этот проект на основе Arduino, с адресными светодиодами, предоставляет уникальный опыт освещения, полностью на вашем контроле. Библиотека "GyverHub" обеспечивает интуитивную настройку и управление, а приложение "GyverHub" для Android гарантирует бесперебойное взаимодействие.
+
 <details>
 <summary><code>Описание на русском</code></summary>
-
 # Управление LED-подсветкой автомобильного спидометра
 
 > Управляйте и настраивайте подсветку спидометра автомобиля с помощью Arduino и адресных светодиодов.
@@ -107,4 +114,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Лицензия
 
 Этот проект распространяется под [лицензией MIT](LICENSE).
+</details>
 </details>
