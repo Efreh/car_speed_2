@@ -15,7 +15,6 @@ Description: Enhance your car's interior aesthetics with custom LED illumination
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Description
@@ -48,10 +47,6 @@ This project enables you to create a unique and customizable LED illumination fo
 
 The configuration is powered by the "GyverHub" library, which provides an intuitive interface for color selection, brightness adjustment, and animation selection. Changes made using the app are stored in EEPROM for persistent settings.
 
-## Contributing
-
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, feel free to open an issue or a pull request.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -74,7 +69,6 @@ This project is licensed under the [MIT License](LICENSE).
 - [Установка](#установка)
 - [Использование](#использование)
 - [Настройка](#настройка)
-- [Вклад в проект](#вклад-в-проект)
 - [Лицензия](#лицензия)
 
 ## Описание
@@ -107,9 +101,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 Настройка осуществляется с использованием библиотеки "GyverHub", которая предоставляет интуитивный интерфейс для выбора цветов, регулировки яркости и выбора анимаций. Изменения, внесенные с помощью приложения, сохраняются в EEPROM для постоянных настроек.
 
-## Вклад в проект
-
-Приветствуются вклады в проект! Если у вас есть идеи, предложения или сообщения об ошибках, не стесняйтесь открывать issue или pull request.
 
 ## Лицензия
 
