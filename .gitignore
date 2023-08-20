@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+build/esp8266.esp8266.d1_mini_clone/car_speed_2.ino.bin
+build/esp8266.esp8266.d1_mini_clone/car_speed_2.ino.elf
+build/esp8266.esp8266.d1_mini_clone/car_speed_2.ino.map

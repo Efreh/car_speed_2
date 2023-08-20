@@ -19,6 +19,27 @@ void startAll_led_animation() {
   for (int i = 0; i < NUM_LEDS; i++) { leds[i] = param.colorArray[i].getHEX(); }  // Set colors for all LEDs based on parameters
   FastLED.show();                                                                 // Update the LED strip with the new colors
 
+
+    FastLED.setBrightness(param.max_brigh);
+    FastLED.show();
+    delay(150);
+    FastLED.setBrightness(0);
+    FastLED.show();
+    delay(150);
+    FastLED.setBrightness(param.max_brigh);
+    FastLED.show();
+    delay(150);
+    FastLED.setBrightness(0);
+    FastLED.show();
+    delay(300);
+  
+    FastLED.setBrightness(param.max_brigh);
+    FastLED.show();
+    delay(500);
+    FastLED.setBrightness(0);
+    FastLED.show();
+    delay(500);
+
   // Gradually increase brightness from 0 to maximum
   for (int i = 0; i < param.max_brigh; i++) {
     FastLED.setBrightness(i);  // Set LED strip brightness

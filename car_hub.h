@@ -1,6 +1,6 @@
 #define GH_NO_MQTT     // Define to exclude MQTT functionality
 #include <GyverHub.h>  // Include the GyverHub library for creating widgets
-#include "car_led.h"  // Include the header file for LED parameters
+#include "car_led.h"   // Include the header file for LED parameters
 
 GyverHub hub("MyDevices", "SpeedometrLed", "");  // Create a GyverHub instance with specified credentials
 
@@ -12,17 +12,29 @@ void build() {
   hub.BeginWidgets();  // Start building widgets
   hub.WidgetSize(30);  // Set the widget size
 
-  // Create color picker widgets for each LED
-  for (int i = 0; i < NUM_LEDS; i++) {
-    hub.Color(&param.colorArray[i], String(F("led ")) + i);  // Create a color picker widget for LED i
+  hub.Title(F("Tacho leds"));
+  for (int i = TACHO_STRT_LED; i <= TACHO_END_LED; i++) {
+    hub.Color(&param.colorArray[i], String(F("led ")) + i);
+  }
+  hub.Title(F("Speedometr leds"));
+  for (int i = SPEED_STRT_LED; i <= SPEED_END_LED; i++) {
+    hub.Color(&param.colorArray[i], String(F("led ")) + i);
+  }
+  hub.Title(F("Temp leds"));
+  for (int i = TEMP_STRT_LED; i <= TEMP_END_LED; i++) {
+    hub.Color(&param.colorArray[i], String(F("led ")) + i);
+  }
+  hub.Title(F("Fuel leds"));
+  for (int i = FUEL_STRT_LED; i <= FUEL_END_LED; i++) {
+    hub.Color(&param.colorArray[i], String(F("led ")) + i);
   }
 
-  hub.BeginWidgets();  // Start a new row of widgets
-  hub.WidgetSize(50);  // Set the widget size
 
+  hub.WidgetSize(100);  // Set the widget size
   // Create a slider widget for adjusting maximum brightness
   hub.Slider(&param.max_brigh, GH_UINT8, F("Brightness"), 0, 255);
 
+  hub.WidgetSize(50);  // Set the widget size
   // Create buttons for updating and saving color changes
   hub.Button(&updateBtn, F("Update color"), GH_GREEN);
   hub.Button(&saveBtn, F("Save color"), GH_RED);
