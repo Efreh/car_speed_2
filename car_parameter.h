@@ -18,6 +18,7 @@
 struct Param {
   GHcolor colorArray[NUM_LEDS];  // Array to store color values for each LED
   uint8_t max_brigh = 255;       // Default maximum brightness value
+  uint8_t start_animation_mode = 0;
 };
 
 Param param;  // Create an instance of the Param structure to store parameters

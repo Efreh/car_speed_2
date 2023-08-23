@@ -11,7 +11,8 @@ void setup() {
   hub_init();  // Initialize GyverHub settings and widgets
 
   initLed();                 // Initialize LED strip configuration
-  startAll_led_animation();  // Start initial LED animation
+  update_AllColor();  // Start initial LED animation
+  start_anim_selector();
 }
 
 void loop() {

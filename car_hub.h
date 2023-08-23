@@ -6,17 +6,19 @@ GyverHub hub("MyDevices", "SpeedometrLed", "");  // Create a GyverHub instanc
 
 GHbutton updateBtn;  // Declare a button widget for updating colors
 GHbutton saveBtn;    // Declare a button widget for saving colors
+GHbutton previewAnimBtn;
 
 // Define the build function to create widgets
 void build() {
   hub.BeginWidgets();  // Start building widgets
   hub.WidgetSize(30);  // Set the widget size
 
-  hub.Title(F("Tacho leds"));
+  // Leds colors button
+  hub.Title(F("Speedometr leds"));
   for (int i = TACHO_STRT_LED; i <= TACHO_END_LED; i++) {
     hub.Color(&param.colorArray[i], String(F("led ")) + i);
   }
-  hub.Title(F("Speedometr leds"));
+  hub.Title(F("Tacho leds"));
   for (int i = SPEED_STRT_LED; i <= SPEED_END_LED; i++) {
     hub.Color(&param.colorArray[i], String(F("led ")) + i);
   }
@@ -28,6 +30,12 @@ void build() {
   for (int i = FUEL_STRT_LED; i <= FUEL_END_LED; i++) {
     hub.Color(&param.colorArray[i], String(F("led ")) + i);
   }
+
+  hub.Title(F("Settings"));
+  hub.WidgetSize(70);
+  hub.Select(&param.start_animation_mode, F("Optitron,Fluorescent lamp"), F("Start animations"));
+  hub.WidgetSize(30);
+  hub.Button(&previewAnimBtn, F("Preview"), GH_GREEN);
 
 
   hub.WidgetSize(100);  // Set the widget size
@@ -54,5 +62,9 @@ void hubTick() {
   }
   if (saveBtn) {
     memory.update();  // If the save button is pressed, update EEPROM with new color data
+  }
+  if (previewAnimBtn) {
+    FastLED.setBrightness(0);
+    start_anim_selector();
   }
 }
